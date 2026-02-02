@@ -1,28 +1,40 @@
 :root {
-    --glow-color: #ffffff; /* White glow effect */
-    --ripple-color: rgba(255, 255, 255, 0.4); /* Subtle white ripple */
+    --glow-color: #ffffff;
+    --ripple-color: rgba(255, 255, 255, 0.4);
     --dark-bg: #121212;
     --card-bg: #1e1e1e;
     --text-color: #ffffff;
+}
+
+@font-face {
+  font-family: 'Torus';
+  src: url('torus-bold-webfont.woff2') format('woff2');
+  font-weight: 700; /* can be 'bold' too */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Usage */
+h1, .bold-text {
+  font-family: 'Torus', sans-serif;
+  font-weight: 700;
 }
 
 body {
     background-color: var(--dark-bg);
     color: var(--text-color);
     font-family: sans-serif;
-    /* Align container to the top */
     display: flex;
     justify-content: center;
-    /* Changed from center to flex-start */
     align-items: flex-start; 
     min-height: 100vh;
     margin: 0;
-    padding-top: 50px; /* Add some space from the very top */
+    padding-top: 50px;
 }
 
 .launcher-container {
     text-align: center;
-    width: 90%; /* Constrain width for a better grid */
+    width: 90%;
     max-width: 800px;
 }
 
@@ -32,13 +44,12 @@ h1 {
 }
 
 .game-grid {
-    display: grid; /* Use CSS grid for rows/columns */
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 25px; /* Space between items */
     justify-items: center;
 }
 
-/* Remove default link styling */
 .game-link {
     text-decoration: none;
     color: inherit;
@@ -48,7 +59,7 @@ h1 {
     position: relative;
     width: 150px;
     height: 150px;
-    border-radius: 20px; /* More rounded corners */
+    border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -68,7 +79,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 20px; /* Apply rounded corners to the image too */
+    border-radius: 20px;
 }
 
 .game-item span {
@@ -80,26 +91,22 @@ h1 {
     font-size: 0.9rem;
 }
 
-/* Subtle white outer glow effect on hover */
 .game-item:hover {
     box-shadow: 0 0 15px 3px var(--glow-color), 0 0 30px 10px rgba(255, 255, 255, 0.1);
-    transform: scale(1.03); /* Less intense scale */
+    transform: scale(1.03);
 }
 
-/* Pushed down button effect on click */
 .game-item:active {
-    transform: scale(0.97); /* Less intense press */
+    transform: scale(0.97);
     box-shadow: 0 0 8px 2px var(--glow-color);
 }
 
-/* Ripple effect styling */
 .ripple {
     position: absolute;
-    border-radius: 50%; /* Ensures a circle */
+    border-radius: 50%;
     transform: scale(0);
-    animation: ripple 0.6s linear forwards; /* Use 'forwards' to keep final state until removed */
-    background-color: var(--ripple-color); /* White ripple */
-}
+    animation: ripple 0.6s linear forwards;
+    background-color: var(--ripple-color);
 
 @keyframes ripple {
     to {
