@@ -14,12 +14,6 @@
   font-display: swap;
 }
 
-/* Usage */
-h1, .bold-text {
-  font-family: 'Torus', sans-serif;
-  font-weight: 700;
-}
-
 body {
     background-color: var(--dark-bg);
     color: var(--text-color);
@@ -41,6 +35,7 @@ body {
 h1 {
     margin-bottom: 30px;
     font-size: 3rem;
+    font-family: 'Torus', sans-serif;
 }
 
 .game-grid {
@@ -53,6 +48,7 @@ h1 {
 .game-link {
     text-decoration: none;
     color: inherit;
+    font-family: 'Torus', sans-serif;
 }
 
 .game-item {
